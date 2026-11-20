@@ -1,0 +1,75 @@
+Application
+  Application
+  main
+  run
+Campus
+  participate
+  teach
+  contains
+Console
+  Console
+  run
+Course
+  Course
+  matches
+  render
+Employee
+  matches
+Engagement
+  participate
+  teach
+  contains
+Example
+  Example
+  university
+Faculty
+  Faculty
+  render
+Identified
+  matches
+Institute
+  Institute
+  render
+Interaction
+  execute
+Participation
+  Participation
+  render
+Person
+  Person
+  matches
+  render
+Printable
+  render
+Project
+  Project
+  render
+Research
+  Research
+  matches
+  participate
+  teach
+  contains
+  render
+Scenario
+  university
+Scholar
+  participate
+  teach
+  contains
+Session
+  Session
+  execute
+  render
+University
+  University
+  participate
+  teach
+  contains
+  render
+Workload
+  Workload
+  participate
+  teach
+  contains
+  render

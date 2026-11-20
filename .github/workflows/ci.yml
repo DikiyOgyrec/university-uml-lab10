@@ -1,0 +1,32 @@
+name: Java and UML
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: maven
+      - name: Compile and test
+        run: mvn --batch-mode verify
+      - name: Run the university scenario
+        run: |
+          printf 'project|Исследование Ω|2026-01-01|2027-01-01|120\ncourse|CS-10|UML-моделирование|4\nshow\nstop\n' | java -cp target/classes edu.university.Application > target/demo.txt
+          grep -F 'Исследование Ω' target/demo.txt
+          grep -F 'UML-моделирование' target/demo.txt
+      - name: Check laboratory artifacts
+        run: |
+          test -s models/university.vpp
+          test -s models/xml-export/project.xml
+          test -s models/classes.png
+          test -s models/use-cases.png
+          test -s models/sequence.png
+          test -s models/activity.png
+          test -s screenshots/execution.jpg
+          test -s screenshots/generation.png
+          test -s generated/edu/university/University.java
