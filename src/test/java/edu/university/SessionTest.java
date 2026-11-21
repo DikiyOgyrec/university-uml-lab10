@@ -6,12 +6,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/**
- * Verifies user commands without requiring a network connection.
- * <p>Run with {@code mvn test}.</p>
- */
 final class SessionTest {
-    /** Verifies isolated results when the same immutable session is used concurrently. */
+
     @Test
     void isolates_concurrent_course_assignments() {
         Session session = new Session(new Example("Университет Ё-" + UUID.randomUUID()).university());
@@ -22,9 +18,6 @@ final class SessionTest {
                     .render().contains(code + index)), org.hamcrest.Matchers.is(true));
     }
 
-    /**
-     * Verifies that participation commands update the displayed scientific workload.
-     */
     @Test
     void records_a_scientists_project_participation() {
         String name = "Проект Ё-" + UUID.randomUUID();
@@ -34,9 +27,6 @@ final class SessionTest {
                 .render(), containsString(name));
     }
 
-    /**
-     * Verifies that course commands make the scientist a teaching employee.
-     */
     @Test
     void assigns_a_course_to_a_scientist() {
         String name = "Курс Ё-" + UUID.randomUUID();
@@ -46,9 +36,6 @@ final class SessionTest {
                 .render(), containsString(name));
     }
 
-    /**
-     * Verifies that invalid project periods cannot enter the domain.
-     */
     @Test
     void rejects_a_project_that_ends_before_it_begins() {
         String name = "Проект Ё-" + UUID.randomUUID();
@@ -58,9 +45,6 @@ final class SessionTest {
             "The session accepted a project with a reversed period");
     }
 
-    /**
-     * Verifies that a course identifier remains unique within the university.
-     */
     @Test
     void rejects_a_duplicate_course_identifier() {
         String code = "курс-" + UUID.randomUUID();
@@ -71,9 +55,6 @@ final class SessionTest {
             "The session accepted a duplicate course identifier");
     }
 
-    /**
-     * Verifies that project work requires a positive number of hours.
-     */
     @Test
     void rejects_nonpositive_project_hours() {
         String name = "Проект Ё-" + UUID.randomUUID();

@@ -8,14 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-/**
- * Verifies the observable behavior of University.
- * <p>Run with {@code mvn test}.</p>
- */
 final class UniversityTest {
-    /**
-     * Verifies that the object reports the number of scientific employees.
-     */
+
     @Test
     void reports_the_number_of_scientific_employees() {
         String name = "Университет Ё-" + UUID.randomUUID();

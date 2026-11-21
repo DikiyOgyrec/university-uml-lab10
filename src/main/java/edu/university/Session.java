@@ -2,19 +2,13 @@ package edu.university;
 
 import java.time.LocalDate;
 
-/**
- * Interprets commands for the scientific employee DEMO-002.
- * <p>Use {@code session.execute("course|CS-1|UML|4").render()} to assign a course.</p>
- */
 public final class Session implements Interaction {
     private final Campus university;
 
-    /** Creates an interaction with an immutable university snapshot. */
     public Session(Campus university) {
         this.university = university;
     }
 
-    /** Executes a command after validating the external text input. */
     @Override
     public Session execute(String command) {
         String[] parts = command.split("\\|", -1);
@@ -47,7 +41,6 @@ public final class Session implements Interaction {
         throw new IllegalArgumentException("Unsupported command [fields=" + parts.length + "]");
     }
 
-    /** Renders the current university snapshot. */
     @Override
     public String render() {
         return this.university.render();

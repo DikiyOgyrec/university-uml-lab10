@@ -2,19 +2,13 @@ package edu.university;
 
 import java.util.List;
 
-/**
- * Supplies fictional scientific staff for the laboratory demonstration.
- * <p>Use {@code new Example("University").university()} to start a session.</p>
- */
 public final class Example implements Scenario {
     private final String name;
 
-    /** Creates a scenario for the supplied university name. */
     public Example(String name) {
         this.name = name;
     }
 
-    /** Creates a university with one faculty and two scientific employees. */
     @Override
     public Campus university() {
         Institute institute = new Institute("Кафедра программирования", "Учебный корпус Ω, кабинет 12");

@@ -5,24 +5,17 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 
-/**
- * Starts the Java 25 application through an instance main method.
- * <p>Run {@code java -cp target/classes edu.university.Application}.</p>
- */
 final class Application implements Runnable {
     private final String name;
 
-    /** Assigns the demonstration university name. */
     Application() {
         this.name = "Учебный университет Ω";
     }
 
-    /** Provides the Java 25 launcher entry point without a static method. */
     void main() {
         this.run();
     }
 
-    /** Opens UTF-8 streams and closes the owned resources on exit. */
     @Override
     public void run() {
         try (

@@ -8,14 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-/**
- * Verifies the observable behavior of Faculty.
- * <p>Run with {@code mvn test}.</p>
- */
 final class FacultyTest {
-    /**
-     * Verifies that the object renders the faculty and its dean.
-     */
+
     @Test
     void renders_the_faculty_and_its_dean() {
         String name = "Декан Ё-" + UUID.randomUUID();

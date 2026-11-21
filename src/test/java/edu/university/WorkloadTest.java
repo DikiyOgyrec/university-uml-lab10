@@ -8,14 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-/**
- * Verifies the observable behavior of Workload.
- * <p>Run with {@code mvn test}.</p>
- */
 final class WorkloadTest {
-    /**
-     * Verifies that the object adds a course without mutating the original workload.
-     */
+
     @Test
     void adds_a_course_without_mutating_the_original_workload() {
         Workload load = new Workload(List.of(), List.of());
@@ -25,9 +19,6 @@ final class WorkloadTest {
             equalTo("Проекты: нет\nКурсы: нет"));
     }
 
-    /**
-     * Verifies that the object retains the assigned course.
-     */
     @Test
     void retains_the_assigned_course() {
         String name = "Сети Ё-" + UUID.randomUUID();

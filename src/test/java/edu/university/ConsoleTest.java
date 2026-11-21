@@ -9,12 +9,8 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
 
-/**
- * Verifies console output as the application's user-visible result.
- * <p>Run with {@code mvn test}; no system streams are replaced.</p>
- */
 final class ConsoleTest {
-    /** Verifies that show writes the current university to the supplied output. */
+
     @Test
     void displays_the_university_requested_by_the_user() throws Exception {
         String name = "Университет Ё-" + UUID.randomUUID();

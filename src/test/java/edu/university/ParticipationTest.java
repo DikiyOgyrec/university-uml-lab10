@@ -8,14 +8,8 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-/**
- * Verifies the observable behavior of Participation.
- * <p>Run with {@code mvn test}.</p>
- */
 final class ParticipationTest {
-    /**
-     * Verifies that the object renders the hours allocated to a project.
-     */
+
     @Test
     void renders_the_hours_allocated_to_a_project() {
         int hours = ThreadLocalRandom.current().nextInt(1, 150);
